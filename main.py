@@ -94,7 +94,7 @@ with col3:
 with col4:
     st.session_state.englv = st.selectbox(label="英語レベル", options=ct.ENGLISH_LEVEL_OPTION, label_visibility="collapsed")
 
-with st.chat_message("assistant", avatar="images/ai_icon.jpg"):
+with st.chat_message("assistant", avatar=ct.AI_ICON_PATH):
     st.markdown("こちらは生成AIによる音声英会話の練習アプリです。何度も繰り返し練習し、英語力をアップさせましょう。")
     st.markdown("**【操作説明】**")
     st.success("""
@@ -108,10 +108,10 @@ st.divider()
 # メッセージリストの一覧表示
 for message in st.session_state.messages:
     if message["role"] == "assistant":
-        with st.chat_message(message["role"], avatar="images/ai_icon.jpg"):
+        with st.chat_message(message["role"], avatar=ct.AI_ICON_PATH):
             st.markdown(message["content"])
     elif message["role"] == "user":
-        with st.chat_message(message["role"], avatar="images/user_icon.jpg"):
+        with st.chat_message(message["role"], avatar=ct.USER_ICON_PATH):
             st.markdown(message["content"])
     else:
         st.divider()
