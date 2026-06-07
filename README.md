@@ -33,9 +33,9 @@
 
 ・プロンプト：SYSTEM_TEMPLATE_BASIC_CONVERSATION
 
-      ○文法ミスをさりげなく訂正しつつ、自然な会話を継続
+      ○ 文法ミスをさりげなく訂正しつつ、自然な会話を継続
 
-      ○必要に応じて会話後に簡単な説明も可能
+      ○ 必要に応じて会話後に簡単な説明も可能
 
 ・フロー：
 
@@ -55,17 +55,17 @@
 
 ・問題文生成プロンプト：SYSTEM_TEMPLATE_CREATE_PROBLEM
 
-    ○約15語の自然な英文（カジュアル会話・ビジネス・友人同士など）
+    ○ 約15語の自然な英文（カジュアル会話・ビジネス・友人同士など）
 
 ・評価プロンプト：SYSTEM_TEMPLATE_EVALUATION
 
-    ○単語の正確性
+    ○ 単語の正確性
 
-    ○文法的な正確性
+    ○ 文法的な正確性
 
-    ○文の完成度
+    ○ 文の完成度
 
-    ○日本語でフィードバック＋励ましコメント
+    ○ 日本語でフィードバック＋励ましコメント
 
 ・フロー：
 
@@ -100,7 +100,7 @@
 
 ・開始ボタン
 
-    ○モードに応じた処理を開始
+    ○ モードに応じた処理を開始
 
 ・再生速度
 
@@ -108,23 +108,23 @@
 
 ・モード選択
 
-    ○「日常英会話」「シャドーイング」「ディクテーション」
+    ○ 「日常英会話」「シャドーイング」「ディクテーション」
 
-    ○モード変更時に関連フラグやカウンタをリセット
+    ○ モード変更時に関連フラグやカウンタをリセット
 
 ・英語レベル
 
-    ○「初級者」「中級者」「上級者」
+    ○ 「初級者」「中級者」「上級者」
 
 メッセージ表示
 
 ・st.session_state.messages に会話履歴を保持
 
-    ○role="assistant"：AIメッセージ（AIアイコン）
+    ○ role="assistant"：AIメッセージ（AIアイコン）
 
-    ○role="user"：ユーザーメッセージ（ユーザーアイコン）
+    ○ role="user"：ユーザーメッセージ（ユーザーアイコン）
 
-    ○role="other"：区切り用
+    ○ role="other"：区切り用
 
 モード専用UI
 
@@ -139,60 +139,60 @@
 使用ライブラリ・サービス
 ・フロントエンド / アプリ基盤
 
-    ○Streamlit
+    ○ Streamlit
 
 ・音声処理
 
-    ○audiorecorder：ブラウザ録音
+    ○ audiorecorder：ブラウザ録音
 
-    ○pydub：音声フォーマット変換・速度変更
+    ○ pydub：音声フォーマット変換・速度変更
 
-    ○pyaudio：音声再生
+    ○ pyaudio：音声再生
 
-    ○wave：WAVファイル操作
+    ○ wave：WAVファイル操作
 
 ・LLM / 音声モデル
 
-    ○OpenAI API
+    ○ OpenAI API
 
-      ○Chat：gpt-4o-mini
+      ○ Chat：gpt-4o-mini
 
-      ○音声認識：whisper-1
+      ○ 音声認識：whisper-1
 
-      ○音声合成：tts-1
+      ○ 音声合成：tts-1
 
 ・LLMオーケストレーション
 
-    ○LangChain
+    ○ LangChain
 
-      ○ChatOpenAI
+      ○ ChatOpenAI
 
-      ○ConversationChain
+      ○ ConversationChain
 
-      ○ConversationSummaryBufferMemory
+      ○ ConversationSummaryBufferMemory
 
-      ○ChatPromptTemplate など
+      ○ ChatPromptTemplate など
 
 主なファイル
 ・main.py
 
-    ○Streamlit アプリ本体
+    ○ Streamlit アプリ本体
 
-    ○画面構成、モード制御、状態管理（st.session_state）
+    ○ 画面構成、モード制御、状態管理（st.session_state）
 
 ・constants.py
 
-    ○アプリ名、モード名、ディレクトリ、プロンプトテンプレートなどの定数
+    ○ アプリ名、モード名、ディレクトリ、プロンプトテンプレートなどの定数
 
 ・functions.py
 
-    ○音声録音・再生・変換
+    ○ 音声録音・再生・変換
 
-    ○Whisper 文字起こし
+    ○ Whisper 文字起こし
 
-    ○問題文生成＋音声再生
+    ○ 問題文生成＋音声再生
 
-    ○評価用チェーン生成
+    ○ 評価用チェーン生成
 
 ◆◆セットアップ◆◆
 
