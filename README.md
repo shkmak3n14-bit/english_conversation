@@ -133,72 +133,75 @@ role="other"：区切り用
 
 ディクテーション時のみ、チャット入力が有効（それ以外は送信不可）
 
-技術構成
+◆◆技術構成◆◆
+
 使用ライブラリ・サービス
-フロントエンド / アプリ基盤
+・フロントエンド / アプリ基盤
 
-Streamlit
+    ○Streamlit
 
-音声処理
+・音声処理
 
-audiorecorder：ブラウザ録音
+    ○audiorecorder：ブラウザ録音
 
-pydub：音声フォーマット変換・速度変更
+    ○pydub：音声フォーマット変換・速度変更
 
-pyaudio：音声再生
+    ○pyaudio：音声再生
 
-wave：WAVファイル操作
+    ○wave：WAVファイル操作
 
-LLM / 音声モデル
+・LLM / 音声モデル
 
-OpenAI API
+    ○OpenAI API
 
-Chat：gpt-4o-mini
+      ○Chat：gpt-4o-mini
 
-音声認識：whisper-1
+      ○音声認識：whisper-1
 
-音声合成：tts-1
+      ○音声合成：tts-1
 
-LLMオーケストレーション
+・LLMオーケストレーション
 
-LangChain
+    ○LangChain
 
-ChatOpenAI
+      ○ChatOpenAI
 
-ConversationChain
+      ○ConversationChain
 
-ConversationSummaryBufferMemory
+      ○ConversationSummaryBufferMemory
 
-ChatPromptTemplate など
+      ○ChatPromptTemplate など
 
 主なファイル
-main.py
+・main.py
 
-Streamlit アプリ本体
+    ○Streamlit アプリ本体
 
-画面構成、モード制御、状態管理（st.session_state）
+    ○画面構成、モード制御、状態管理（st.session_state）
 
-constants.py
+・constants.py
 
-アプリ名、モード名、ディレクトリ、プロンプトテンプレートなどの定数
+    ○アプリ名、モード名、ディレクトリ、プロンプトテンプレートなどの定数
 
-functions.py
+・functions.py
 
-音声録音・再生・変換
+    ○音声録音・再生・変換
 
-Whisper 文字起こし
+    ○Whisper 文字起こし
 
-問題文生成＋音声再生
+    ○問題文生成＋音声再生
 
-評価用チェーン生成
+    ○評価用チェーン生成
 
-セットアップ
+◆◆セットアップ◆◆
+
 1. 必要環境
-Python 3.9+
+   
+・Python 3.9+
 
-OpenAI API キー
+・OpenAI API キー
 
-マイク入力・音声出力が可能な環境
+・マイク入力・音声出力が可能な環境
 
 2. 依存ライブラリ（例）
 bash
@@ -223,7 +226,8 @@ project_root/
     input/
     output/
   .env
-起動方法
+
+◆◆起動方法◆◆
 bash
 streamlit run main.py
 ブラウザが立ち上がったら：
@@ -234,11 +238,12 @@ streamlit run main.py
 
 各モードの指示に従って、発話 or 入力を行う
 
-今後の拡張アイデア
-英語レベルに応じた文の難易度制御
+◆◆今後の拡張アイデア◆◆
 
-学習履歴に基づく弱点フィードバックの蓄積
+・英語レベルに応じた文の難易度制御
 
-単語・表現ごとのスコアリング・可視化
+・学習履歴に基づく弱点フィードバックの蓄積
 
-モバイル環境向けUI最適化
+・単語・表現ごとのスコアリング・可視化
+
+・モバイル環境向けUI最適化
