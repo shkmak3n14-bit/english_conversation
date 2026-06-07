@@ -34,7 +34,6 @@ def record_audio(audio_input_file_path):
     )
 
     if len(audio) > 0:
-        os.makedirs(ct.AUDIO_INPUT_DIR, exist_ok=True)
         audio.export(audio_input_file_path, format="wav")
     else:
         st.stop()
@@ -67,7 +66,6 @@ def save_to_wav(llm_response_audio, audio_output_file_path):
     """
 
     temp_audio_output_filename = f"{ct.AUDIO_OUTPUT_DIR}/temp_audio_output_{int(time.time())}.mp3"
-    os.makedirs(ct.AUDIO_OUTPUT_DIR, exist_ok=True)
     with open(temp_audio_output_filename, "wb") as temp_audio_output_file:
         temp_audio_output_file.write(llm_response_audio)
     
