@@ -25,6 +25,10 @@ st.set_page_config(
     page_title=ct.APP_NAME
 )
 
+# 起動時に音声ファイル保存先ディレクトリを作成
+Path(ct.AUDIO_INPUT_DIR).mkdir(parents=True, exist_ok=True)
+Path(ct.AUDIO_OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+
 # タイトル表示
 st.markdown(f"## {ct.APP_NAME}")
 

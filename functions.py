@@ -34,6 +34,8 @@ def record_audio(audio_input_file_path):
     )
 
     if len(audio) > 0:
+        # Ensure the destination directory exists before exporting audio.
+        Path(audio_input_file_path).parent.mkdir(parents=True, exist_ok=True)
         audio.export(audio_input_file_path, format="wav")
     else:
         st.stop()
@@ -64,6 +66,10 @@ def save_to_wav(llm_response_audio, audio_output_file_path):
         llm_response_audio: LLMからの回答の音声データ
         audio_output_file_path: 出力先のファイルパス
     """
+
+    # Ensure output directories exist before creating temp and wav files.
+    Path(ct.AUDIO_OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+    Path(audio_output_file_path).parent.mkdir(parents=True, exist_ok=True)
 
     temp_audio_output_filename = f"{ct.AUDIO_OUTPUT_DIR}/temp_audio_output_{int(time.time())}.mp3"
     with open(temp_audio_output_filename, "wb") as temp_audio_output_file:
