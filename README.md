@@ -120,18 +120,19 @@
 
 ・st.session_state.messages に会話履歴を保持
 
-role="assistant"：AIメッセージ（AIアイコン）
+    ○role="assistant"：AIメッセージ（AIアイコン）
 
-role="user"：ユーザーメッセージ（ユーザーアイコン）
+    ○role="user"：ユーザーメッセージ（ユーザーアイコン）
 
-role="other"：区切り用
+    ○role="other"：区切り用
 
 モード専用UI
-シャドーイング中：「シャドーイング開始」ボタン
 
-ディクテーション中：「ディクテーション開始」ボタン＋チャット入力欄
+・シャドーイング中：「シャドーイング開始」ボタン
 
-ディクテーション時のみ、チャット入力が有効（それ以外は送信不可）
+・ディクテーション中：「ディクテーション開始」ボタン＋チャット入力欄
+
+・ディクテーション時のみ、チャット入力が有効（それ以外は送信不可）
 
 ◆◆技術構成◆◆
 
@@ -204,17 +205,24 @@ role="other"：区切り用
 ・マイク入力・音声出力が可能な環境
 
 2. 依存ライブラリ（例）
-bash
+ 
+```bash
 pip install streamlit openai langchain langchain-openai python-dotenv pydub pyaudio audiorecorder scipy
+```
+
 ※ pyaudio は環境によって追加のセットアップが必要な場合があります。
 
 3. 環境変数
+
 .env ファイルなどで OpenAI API キーを設定します。
 
-env
+```bash
 OPENAI_API_KEY=your_api_key_here
+```
+
 4. ディレクトリ構成（例）
-text
+
+```bash
 project_root/
   main.py
   functions.py
@@ -226,17 +234,21 @@ project_root/
     input/
     output/
   .env
+```
 
 ◆◆起動方法◆◆
-bash
+
+```bash
 streamlit run main.py
+```
+
 ブラウザが立ち上がったら：
 
-モードと再生速度、英語レベルを選択
+    1. モードと再生速度、英語レベルを選択
 
-「開始」ボタンを押す
+    2. 「開始」ボタンを押す
 
-各モードの指示に従って、発話 or 入力を行う
+    3. 各モードの指示に従って、発話 or 入力を行う
 
 ◆◆今後の拡張アイデア◆◆
 
